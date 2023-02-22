@@ -162,6 +162,7 @@ public class NeteaseCloudMusicApi : IMusicApi
         var name = (string)j["songs"]![0]!["name"]!;
         var ar = j["songs"]![0]!["ar"]!.AsArray().Select(x => x!["name"]!.GetValue<string>()).ToArray();
         return new Music(id, name, ar);
+        
     }
 
     public Task<IEnumerable<Music>> SearchMusicByNameAsync(string name)
